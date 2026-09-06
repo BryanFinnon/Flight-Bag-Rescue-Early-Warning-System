@@ -1,76 +1,42 @@
-# ✈️ Flight Bag Rescue — Early Warning System
+# Flight Bag Rescue — Early Warning System
 
-> Predictive analytics system to identify high-risk luggage delays at congested transit hubs.
+> **Status: design and documentation stage. Implementation is not yet included in this repository.**
 
----
+A proposed early-warning system for detecting operational risks around electronic flight bags and alerting crews before they become critical.
 
-## 📖 Overview
+## Intended problem
 
-Flight baggage delays are a major operational issue in air travel, especially at high-traffic hubs with tight transfer windows.
+Electronic flight bag failures can disrupt access to operational information. This project explores a system that would collect health signals, identify warning patterns, and present actionable alerts to flight operations teams.
 
-This project builds a **risk-scoring model** to predict whether a bag is likely to be delayed, enabling early intervention and improved logistics.
+## Proposed scope
 
----
+- Device and application health monitoring
+- Rule-based risk detection
+- Prioritised alerts
+- Operational dashboard
+- Incident history and audit trail
+- Future anomaly-detection experiments
 
-## 🚀 Key Results
+## Planned architecture
 
-- Processed **7,000+ tracking records**
-- Integrated **3+ operational datasets** (logs, schedules, performance metrics)
-- Engineered **5+ predictive features**
-- Built a **logistic regression model** for delay prediction
+```text
+Telemetry sources → ingestion service → rules/anomaly engine → alert API → dashboard
+```
 
----
+## Implementation roadmap
 
-## 🧠 Methodology
+- [ ] Define representative telemetry schema and synthetic sample data
+- [ ] Build ingestion and validation service
+- [ ] Implement baseline rules engine
+- [ ] Add dashboard and alert lifecycle
+- [ ] Add automated tests and CI
+- [ ] Evaluate anomaly-detection approaches
+- [ ] Document deployment and security model
 
-### 1. Data Integration
-Combined multiple data sources:
-- baggage tracking logs  
-- flight schedules  
-- operational performance metrics  
+## Why this repository remains public
 
-### 2. Feature Engineering
-Designed predictive variables including:
-- hub congestion indicators  
-- transfer window duration  
-- connection complexity  
-- timing-related features  
+The current material demonstrates problem framing and system-design thinking. It should not yet be evaluated as a completed software project; source code, tests, and a runnable demonstration will be added in later iterations.
 
-### 3. Modeling
-- Logistic Regression (binary classification)
-- Output: **probability of delay (risk score)**
+## Author
 
----
-
-## 📊 Example Output
-
-| Bag ID | Risk Score | Prediction |
-|--------|-----------|-----------|
-| 10234  | 0.82      | High Risk |
-| 20451  | 0.27      | Low Risk  |
-
----
-
-## ⚙️ Tech Stack
-
-- Python  
-- Scikit-learn  
-- Pandas  
-
----
-
-## 📂 Project Structure
-
-```bash
-.
-├── notebooks/
-│   ├── preprocessing.ipynb      # Data cleaning & merging
-│   ├── feature_engineering.ipynb
-│   ├── modeling.ipynb           # Logistic regression training
-│   ├── evaluation.ipynb         # Metrics & validation
-│
-├── data/
-│   ├── raw_data.csv
-│   ├── processed_data.csv
-│
-├── README.md
+Bryan Finnon — MSc Computer Science (Distinction), focused on applied AI and software engineering.
