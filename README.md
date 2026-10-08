@@ -1,42 +1,46 @@
-# Flight Bag Rescue — Early Warning System
+# Flight Bag Rescue — Early Warning System Concept
 
-> **Status: design and documentation stage. Implementation is not yet included in this repository.**
+A system-design concept for detecting operational risks affecting electronic flight bags and alerting flight operations teams before failures become critical.
 
-A proposed early-warning system for detecting operational risks around electronic flight bags and alerting crews before they become critical.
+> **Status:** documentation and architecture stage. This repository does not yet contain an implementation.
 
-## Intended problem
+## Problem
 
-Electronic flight bag failures can disrupt access to operational information. This project explores a system that would collect health signals, identify warning patterns, and present actionable alerts to flight operations teams.
+Electronic flight bag failures can disrupt access to operational information. The proposed system would collect device and application health signals, identify warning patterns and present prioritised alerts.
 
-## Proposed scope
+## Proposed capabilities
 
 - Device and application health monitoring
+- Telemetry ingestion and validation
 - Rule-based risk detection
-- Prioritised alerts
-- Operational dashboard
+- Prioritised operational alerts
 - Incident history and audit trail
 - Future anomaly-detection experiments
 
-## Planned architecture
+## Proposed architecture
 
 ```text
-Telemetry sources → ingestion service → rules/anomaly engine → alert API → dashboard
+Telemetry sources
+      ↓
+Ingestion and validation
+      ↓
+Rules and anomaly engine
+      ↓
+Alert API
+      ↓
+Operations dashboard
 ```
 
 ## Implementation roadmap
 
-- [ ] Define representative telemetry schema and synthetic sample data
-- [ ] Build ingestion and validation service
-- [ ] Implement baseline rules engine
-- [ ] Add dashboard and alert lifecycle
-- [ ] Add automated tests and CI
-- [ ] Evaluate anomaly-detection approaches
-- [ ] Document deployment and security model
+1. Define a representative telemetry schema and synthetic dataset.
+2. Build ingestion and validation services.
+3. Implement a baseline rules engine.
+4. Add an alert dashboard and lifecycle.
+5. Introduce automated tests and CI.
+6. Evaluate anomaly-detection approaches.
+7. Document security and deployment requirements.
 
-## Why this repository remains public
+## Current value
 
-The current material demonstrates problem framing and system-design thinking. It should not yet be evaluated as a completed software project; source code, tests, and a runnable demonstration will be added in later iterations.
-
-## Author
-
-Bryan Finnon — MSc Computer Science (Distinction), focused on applied AI and software engineering.
+The repository currently demonstrates problem framing, system decomposition and an implementation roadmap. It should be evaluated as a design case study, not as completed software.
